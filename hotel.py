@@ -6,7 +6,7 @@ class HotelManagementSytem:
     def __init__(self,root):
         self.root=root
         self.root.title("Hotel Management System")
-        self.root.geometry("1550x800+0+0")
+        self.root.geometry("1350x800+0+0")
 
 
 
@@ -103,6 +103,7 @@ class HotelManagementSytem:
     def cust_details(self):
         self.new_window=Toplevel(self.root)
         self.app=Cust_Win(self.new_window)
+        
 
 
 
