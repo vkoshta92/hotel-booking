@@ -1,6 +1,7 @@
 from tkinter import *
 from PIL import Image,ImageTk
 from customer import Cust_Win
+from room import Roombooking
 
 class HotelManagementSytem:
     def __init__(self,root):
@@ -53,7 +54,7 @@ class HotelManagementSytem:
         cust_btn.grid(row=0,column=0,pady=1)
         
         # room_btn-2
-        room_btn=Button(btn_frame,text="ROOM",width=22,font=("times new roman",14,"bold"),bd=0,bg="black",fg="gold",cursor="hand1")
+        room_btn=Button(btn_frame,text="ROOM",command=self.roombooking,width=22,font=("times new roman",14,"bold"),bd=0,bg="black",fg="gold",cursor="hand1")
         room_btn.grid(row=1,column=0,pady=1)
 
         # details_btn-3
@@ -66,7 +67,7 @@ class HotelManagementSytem:
         report_btn.grid(row=3,column=0,pady=1)
         
         # logout_btn-2
-        logout_btn=Button(btn_frame,text="LOGOUT",width=22,font=("times new roman",14,"bold"),bd=0,bg="black",fg="gold",cursor="hand1")
+        logout_btn=Button(btn_frame,text="LOGOUT",command=self.logout,width=22,font=("times new roman",14,"bold"),bd=0,bg="black",fg="gold",cursor="hand1")
         logout_btn.grid(row=4,column=0,pady=1)
 
 
@@ -103,7 +104,15 @@ class HotelManagementSytem:
     def cust_details(self):
         self.new_window=Toplevel(self.root)
         self.app=Cust_Win(self.new_window)
+    
+    # hotel function
+    def roombooking(self):
+        self.new_window=Toplevel(self.root)
+        self.app=Roombooking(self.new_window)
         
+    # logout
+    def logout(self):
+        self.root.destroy()
 
 
 
